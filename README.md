@@ -1,5 +1,6 @@
 # Weather Monster
 
+
 ## Setting Up The Project
 *  Clone the repo with 
 	```git clone https://github.com/Zubs/Acumen.git```
@@ -18,5 +19,12 @@
 *  Run Migrations
 	```php artisan migrate```
 
-*  Serve application
+
+## Running The Tests
+
+
+## Running The App
+*  Start server and run appl
 	```php artisan serve```
+
+### Endpoints
