@@ -27,7 +27,7 @@ class CitiesController extends Controller
 
         if ($city) {
             return response()->json([
-                'data' => null,
+                'data' => [],
                 'message' => 'City exists already'
             ]);
         } else {

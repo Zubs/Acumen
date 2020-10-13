@@ -23,12 +23,4 @@ class CitiesResource extends JsonResource
             'latitude' => $this->latitude,
         ];
     }
-
-    public function with($request) {
-        return [
-            'author' => 'Zubair Idris Aweda',
-            'verion' => '1.0.0',
-            'author_url' => url('https://www.github.com/Zubs')
-        ];
-    }
 }

@@ -14,6 +14,19 @@ class ForecastsResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        $min = [];
+        $max = [];
+
+        foreach ($this->temperature as $shit) {
+            array_push($min, $shit->min);
+            array_push($max, $shit->max);
+        }
+
+        return [
+            'city_id' => $this->id,
+            'max' => (int) (array_sum($min) / count($min)),
+            'min' => (int) (array_sum($max) / count($max)),
+            'sample' => count($this->temperature),
+        ];
     }
 }

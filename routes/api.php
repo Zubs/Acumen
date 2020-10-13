@@ -35,3 +35,9 @@ Route::group([
 	// Deleting a city
 	Route::delete('/{id}', [CitiesController::class, 'destroy']);
 });
+
+// Register a new temperature for a city
+Route::post('/temperature', [TemperaturesController::class, 'store']);
+
+// Get the forecasts for a city
+Route::get('/forecasts/{id}', [ForecastsController::class, 'show']);

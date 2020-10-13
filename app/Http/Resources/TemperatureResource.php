@@ -14,6 +14,12 @@ class TemperatureResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'min' => $this->min,
+            'max' => $this->max,
+            'cities_id' => $this->cities_id,
+            'timestamp' => $this->created_at,
+        ];
     }
 }
