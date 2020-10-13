@@ -12,4 +12,8 @@ class Cities extends Model
     public function temperature() {
     	return $this->hasMany('App\Models\Temperature');
     }
+
+    public function webhooks() {
+    	return $this->hasMany('App\Models\Webhooks');
+    }
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Cities;
 use App\Models\Temperature;
 use App\Http\Resources\TemperatureResource;
+use Carbon\Carbon;
 
 class TemperaturesController extends Controller
 {
@@ -31,6 +32,7 @@ class TemperaturesController extends Controller
             $temperature->min = $request->min;
             $temperature->max = $request->max;
             $temperature->cities_id = $request->cities_id;
+            $temperature->timestamp = Carbon::now()->timestamp;
             $temperature->save();
 
             return new TemperatureResource($temperature);

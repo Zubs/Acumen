@@ -22,6 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// City routes
 Route::group([
 	'prefix' => '/cities',
 ], function () {
@@ -41,3 +42,15 @@ Route::post('/temperature', [TemperaturesController::class, 'store']);
 
 // Get the forecasts for a city
 Route::get('/forecasts/{id}', [ForecastsController::class, 'show']);
+
+// Webhook noutes
+Route::group([
+	'prefix' => '/webhooks',
+], function () {
+
+	// Creating a web hook
+	Route::post('/', [WebhooksController::class, 'store']);
+
+	// Deleting a web hook
+	Route::delete('/{id}', [WebhooksController::class, 'destroy']);
+});

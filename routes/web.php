@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Cities;
+use Carbon\Carbon;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,10 @@ use App\Models\Cities;
 
 Route::get('/', function () {
 	$city = Cities::find(1)->first();
+	$time = Carbon::now()->timestamp;
 
-    return view('welcome')->with('city', $city);
+    return view('welcome')->with([
+    	'city' => $city,
+    	'time' => $time,
+    ]);
 });

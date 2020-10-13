@@ -19,7 +19,7 @@ class TemperatureResource extends JsonResource
             'min' => $this->min,
             'max' => $this->max,
             'cities_id' => $this->cities_id,
-            'timestamp' => $this->created_at,
+            'timestamp' => $this->timestamp,
         ];
     }
 }

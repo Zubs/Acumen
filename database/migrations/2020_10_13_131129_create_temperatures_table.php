@@ -18,6 +18,7 @@ class CreateTemperaturesTable extends Migration
             $table->integer('min');
             $table->integer('max');
             $table->integer('cities_id');
+            $table->integer('timestamp');
             $table->timestamps();
         });
     }

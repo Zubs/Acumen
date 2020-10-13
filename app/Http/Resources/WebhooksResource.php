@@ -14,6 +14,10 @@ class WebhooksResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'cities_id' => $this->cities_id,
+            'callback_url' => $this->callback_url,
+        ];
     }
 }

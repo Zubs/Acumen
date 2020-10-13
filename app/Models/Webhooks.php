@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Webhooks extends Model
 {
     use HasFactory;
+
+    public function cities() {
+    	return $this->belongsTo('App\Models\Cities');
+    }
 }
