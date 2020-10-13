@@ -1,5 +1,7 @@
 # Weather Monster
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/44a6f3c59b8e49e2868edde025a824c1)](https://app.codacy.com/gh/Zubs/Acumen?utm_source=github.com&utm_medium=referral&utm_content=Zubs/Acumen&utm_campaign=Badge_Grade)
+
 
 ## Setting Up The Project
 *  Clone the repo with 
