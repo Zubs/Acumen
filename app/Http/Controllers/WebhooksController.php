@@ -39,8 +39,15 @@ class WebhooksController extends Controller
     {
         $webhook = Webhooks::find($id);
 
-        $webhook->delete();
+        if ($webhook) {
+            $webhook->delete();
 
-        return new WebhooksResource($webhook);
+            return new WebhooksResource($webhook);
+        } else {
+            return response()->json([
+                'data' => [],
+                'message' => 'City notfound'
+            ]);
+        };
     }
 }

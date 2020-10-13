@@ -18,6 +18,13 @@ class ForecastsController extends Controller
     {
         $city = Cities::find($id);
 
-        return new ForecastsResource($city);
+        if ($city) {
+            return new ForecastsResource($city);
+        } else {
+            return response()->json([
+                'data' => [],
+                'message' => 'City not found',
+            ]);
+        };
     }
 }

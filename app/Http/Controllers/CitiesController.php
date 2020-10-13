@@ -57,12 +57,21 @@ class CitiesController extends Controller
         ]);
 
         $city = Cities::find($id);
-        $city->name = $request->name;
-        $city->longitude = $request->longitude;
-        $city->latitude = $request->latitude;
-        $city->save();
 
-        return new CitiesResource($city);
+        // You can only update a city that exists
+        if ($city) {
+            $city->name = $request->name;
+            $city->longitude = $request->longitude;
+            $city->latitude = $request->latitude;
+            $city->save();
+
+            return new CitiesResource($city);
+        } else {
+            return response()->json([
+                'data' => [],
+                'message' => 'City not found',
+            ]);
+        };
     }
 
     /**
@@ -75,8 +84,15 @@ class CitiesController extends Controller
     {
         $city = Cities::find($id);
 
-        $city->delete();
+        if ($city) {
+            $city->delete();
 
-        return new CitiesResource($city);
+            return new CitiesResource($city);
+        } else {
+            return response()->json([
+                'data' => [],
+                'message' => 'City not found',
+            ]);
+        };
     }
 }

@@ -39,7 +39,7 @@ class TemperaturesController extends Controller
         } else {
             return response()->json([
                 'data' => [],
-                'message' => 'City doesn\'t exist',
+                'message' => 'City not found',
             ]);
         };
     }
