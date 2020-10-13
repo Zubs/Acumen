@@ -22,5 +22,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Creating a city
-Route::post('/cities', [CitiesController::class, 'store'])->name('new-city');
+Route::group([
+	'prefix' => '/cities',
+], function () {
+
+	// Creating a city
+	Route::post('/', [CitiesController::class, 'store']);
+
+	// Updating a city
+	Route::patch('/{id}', [CitiesController::class, 'update']);
+
+	// Deleting a city
+	Route::delete('/{id}', [CitiesController::class, 'destroy']);
+});
