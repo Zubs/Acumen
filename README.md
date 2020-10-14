@@ -13,20 +13,27 @@
 *  Get your .env file
 	```php -r "file_exists('.env') || copy('.env.example', '.env')```
 
-*  Generate APP_KEY
-	```php artisan key:generate```
+*  Fill in the right config details in the ```.env``` file.
+	```
+	DB_CONNECTION=mysql
+	DB_HOST=127.0.0.1
+	DB_PORT=3306
+	DB_DATABASE=acumen
+	DB_USERNAME=root
+	DB_PASSWORD=
+	```
 
-*  Fill required database details in .env file
+*  Generate ```APP_KEY```
+	```php artisan key:generate```
 
 *  Run Migrations
 	```php artisan migrate```
 
 
 ## Running The Tests
-
+*  Run all tests
+	```php artisan test```
 
 ## Running The App
-*  Start server and run appl
+*  Start server and run application
 	```php artisan serve```
-
-### Endpoints
