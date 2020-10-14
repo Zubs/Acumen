@@ -16,7 +16,7 @@ use Carbon\Carbon;
 */
 
 Route::get('/', function () {
-	$city = Cities::find(1)->first();
+	$city = Cities::find(3)->first();
 	$time = Carbon::now()->timestamp;
 
     return view('welcome')->with([
